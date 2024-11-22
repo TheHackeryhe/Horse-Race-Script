@@ -1,0 +1,31 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Horse Race", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+  Name = "Energy Farm",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
+})
+OrionLib:MakeNotification({
+  Name = "Hello",
+  Content = "Thx For Using My Script Fuckers",
+  Image = "rbxassetid://4483345998",
+  Time = 5.5
+})
+Tab:AddToggle({
+  Name = "Auto Energy",
+  Default = false,
+  Callback  Default = false,
+  Callback = function(Value) = function(Value)
+        _G.autotap = true
+      while _G.autotap == true do
+        local args = {
+          [1] = "Treadmill_1_6"
+        }
+
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.5.1").knit.Services.TrainService.RE.RunTrain:FireServer(unpack(args))
+
+          wait(0.01)
+      end
+    print(Value)
+  end    
+})
